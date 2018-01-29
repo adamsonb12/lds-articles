@@ -11,7 +11,7 @@ const App = () => {
     <Provider store={createStore(reducers)}>
       <div>
         <Tile />
-        <Article />
+        {/* <Article /> */}
       </div>
     </Provider>
   );
