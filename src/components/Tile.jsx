@@ -1,17 +1,46 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { TileSmall } from './common';
+import { TileSmall, TileSelected } from './common';
 
 class Tile extends Component {
+
+  state = {
+    tileSelected: false
+  }
+
+  renderContent() {
+    if(this.state.tileSelected) {
+      return (
+        <TileSelected tile={this.props.tile} />
+      );
+    }
+    return;
+  }
+
+  changeSelected() {
+    console.log('clicked');
+    this.setState({ tileSelected: true });
+  }
+
   render() {
-    console.log(this.props);
     return (
-      <div className="container">
-        <TileSmall tile={this.props.tile}></TileSmall>
-        <div className="sectionBottom">Tile</div>
+      <div style={styles.containerStyle}>
+        <div onClick={this.changeSelected.bind(this)} >
+          <TileSmall tile={this.props.tile}/>
+        </div>
+        {this.renderContent()}
       </div>
     );
+  }
+}
+
+const styles = {
+  containerStyle: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 }
 
