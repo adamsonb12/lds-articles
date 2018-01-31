@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 import Thumbnail from './Thumbnail';
 
 const ImagesList = ({ article, children }) => {
-  console.log(article);
   const listItems = article.images.map((image) => 
-    <Thumbnail img={image} />
+    <Thumbnail img={image} key={image.imageurl} />
   );
   return (
     <div style={styles.listContainerStyle}>

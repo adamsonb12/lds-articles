@@ -19,7 +19,6 @@ class Tile extends Component {
   }
 
   changeSelected() {
-    console.log('clicked');
     this.setState({ tileSelected: true });
   }
 

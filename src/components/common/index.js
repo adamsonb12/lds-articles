@@ -6,3 +6,4 @@ export * from './LargeVid';
 export * from './ArticleImages';
 export * from './ArticleText';
 export * from './ImagesList';
+export * from './ArticleVid';

@@ -8,7 +8,6 @@ const INITIAL_STATE = {
 }
 
 export default (state = INITIAL_STATE, action) => {
-  console.log('Action here:', action);
   switch (action.type) {
     case SELECT_PICTURE:
       return { ...state, selectedImage: action.payload };

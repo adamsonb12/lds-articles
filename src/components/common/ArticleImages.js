@@ -7,10 +7,6 @@ import { selectPicture } from '../../actions';
 class ArticleImages extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedImageTitle: props.article.images[0].title,
-      selectedImageCaption: props.article.images[0].caption
-    }
   }
 
   render() {
@@ -19,8 +15,8 @@ class ArticleImages extends Component {
         <img src={this.props.selectedImage.imageurl} style={styles.imageStyle}/> {/* Might have to fix this*/}
         <div style={styles.imageDetailContainerStyle}>
           <div style={styles.imageDetailsStyle}>
-            <span style={styles.titleStyle}>{this.state.selectedImageTitle}</span>
-            <span style={styles.captionStyle}>{this.state.selectedImageCaption}</span>
+            <span style={styles.titleStyle}>{this.props.selectedImage.title}</span>
+            <span style={styles.captionStyle}>{this.props.selectedImage.caption}</span>
           </div>
           <ImagesList article={this.props.article} />
         </div>
@@ -31,10 +27,13 @@ class ArticleImages extends Component {
 
 const styles = {
   mainContainerStyle: {
-    alignSelf: 'flex-start'
+    alignSelf: 'flex-start',
+    width: '100%'
   },
   imageStyle: {
-    width: '100%'
+    width: '100%',
+    objectFit: 'cover',
+    height: 600
   },
   imageDetailContainerStyle: {
     display: 'flex',
