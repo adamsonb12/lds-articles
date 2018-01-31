@@ -9,7 +9,7 @@ class Article extends Component {
 
   render() {
     const textItems = this.props.article.articleText.map((textItem) => 
-      <ArticleText textItem={textItem}/>
+      <ArticleText textItem={textItem} key={textItem.text}/>
     );
     return (
       <div style={styles.articleContainerStyle}>
