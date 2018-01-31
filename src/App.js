@@ -9,9 +9,9 @@ import Article from './components/Article';
 const App = () => {
   return (
     <Provider store={createStore(reducers)}>
-      <div>
-        <Tile />
-        {/* <Article /> */}
+      <div style={{fontFamily: 'Helvetica Neue'}}>
+        {/* <Tile /> */}
+        <Article />
       </div>
     </Provider>
   );
