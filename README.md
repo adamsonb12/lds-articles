@@ -8,7 +8,9 @@ npm start
 ```
 
 The app will load and display the Article Component. In order to navigate to the Tile Component, add:
-> /tile
+```
+/tile
+```
 at the end of the url in the browser.
 
 You're good to go!
